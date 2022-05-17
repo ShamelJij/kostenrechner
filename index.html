@@ -57,35 +57,53 @@
       </div>
     </div>
   </div>
-  <div class="container d-flex justify-content-center py-2">
-    <div class="form-row mt-2 d-flex justify-content-center">
-      <div class="col">
-        <h4>Druckvolumen S/W: </h4>
+  <hr class="mx-5">
+  <div class="row py-5">
+    <div class="col">
+      <div class="container d-flex justify-content-center py-2">
+        <div class="form-row mt-2 d-flex justify-content-center">
+          <div class="col">
+            <h4>Druckvolumen S/W: </h4>
+          </div>
+          <div class="col form-group">
+            <input type="range" class="custom-range" oninput="showSlider()" min="0" max="100000" step="1000" id="sliderInputGray" value="0">
+            <span>Current Slider Value: <span id="sliderPrintGray"></span></span>
+          </div>
+        </div>
       </div>
-      <div class="col form-group">
-        <input type="range" class="custom-range" oninput="showSlider()" min="0" max="100000" step="1000" id="sliderInputGray" value="0">
-        <span>Current Slider Value: <span id="sliderPrintGray"></span></span>
+    </div>
+    <div class="col">
+      <div class="form-row mt-2">
+        <div class="col-auto text-center">
+            <h4>Energiekosten pro kW/h: </h4>
+        </div>
+      <div class="col">
+        <input type="number" class="form-control" id="energyCost" placeholder="Wert in Euro bitte" value="0.27">
+      </div>
+    </div>
+    </div>
+    <div class="col">
+      <div class="container d-flex justify-content-center py-2">
+        <div class="form-row mt-2 d-flex justify-content-center">
+          <div class="col">
+            <h4>Druckvolumen Farbe: </h4>
+          </div>
+          <div class="col form-group">
+            <input type="range" class="custom-range" oninput="showSlider()" min="0" max="100000" step="1000" id="sliderInputColor" value="0">
+            <span>Current Slider Value: <span id="sliderPrintColor"></span></span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-  <div class="container d-flex justify-content-center py-2">
-    <div class="form-row mt-2 d-flex justify-content-center">
-      <div class="col">
-        <h4>Druckvolumen Farbe: </h4>
-      </div>
-      <div class="col form-group">
-        <input type="range" class="custom-range" oninput="showSlider()" min="0" max="100000" step="1000" id="sliderInputColor" value="0">
-        <span>Current Slider Value: <span id="sliderPrintColor"></span></span>
-      </div>
-    </div>
-  </div>
+  <hr class="mx-5">
   <div class="row">
     <div class="col-md-5 text-center">
       <h2 class="text-center">Variante A</h2>
       <form>
         <div class="form-row mt-2">
             <div class="col text-center">
-                <h4>Anschaffunskosten</h4>
+                <h4>Anschaffungskosten</h4>
             </div>
           <div class="col">
             <input type="number" class="form-control" id="priceA" placeholder="Wert in Euro bitte">
@@ -128,7 +146,7 @@
                 <h4>Ergebniss:</h4>
             </div>
             <div class="col">
-                <input type="text" class="form-control" id="gesamtA" readonly>
+                <input type="text" class="form-control" id="totalA" readonly>
             </div>
         </div>
       </form>
@@ -141,7 +159,7 @@
         <form>
             <div class="form-row mt-2">
                 <div class="col text-center">
-                    <h4>Anschaffunskosten</h4>
+                    <h4>Anschaffungskosten</h4>
                 </div>
               <div class="col">
                 <input type="number" class="form-control" id="priceB" placeholder="Wert in Euro bitte">
@@ -184,14 +202,14 @@
                       <h4>Ergebniss:</h4>
                   </div>
                   <div class="col">
-                      <input type="text" class="form-control" id="gesamtB" readonly>
+                      <input type="text" class="form-control" id="totalB" readonly>
                   </div>
               </div>
           </form>
     </div>
   </div>
   <div class="container d-flex justify-content-center py-5">
-    <h2>Gewinner: </h2>
+    <h2>Gewinner: <span class="text-info" id="result"></span></h2>
   </div>
   <div class="form-row mt-2 d-flex justify-content-center">
     <button type="submit" onclick="ausrechnen()" class="btn btn-primary" id="calculate">Rechnen</button>
