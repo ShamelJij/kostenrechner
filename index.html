@@ -57,25 +57,38 @@
       </div>
     </div>
   </div>
+  <div class="container d-flex justify-content-center py-2">
+    <div class="form-row mt-2 d-flex justify-content-center">
+      <div class="col">
+        <h4>Druckvolumen S/W: </h4>
+      </div>
+      <div class="col form-group">
+        <input type="range" class="custom-range" oninput="showSlider()" min="0" max="100000" step="1000" id="sliderInputGray" value="0">
+        <span>Current Slider Value: <span id="sliderPrintGray"></span></span>
+      </div>
+    </div>
+  </div>
+  <div class="container d-flex justify-content-center py-2">
+    <div class="form-row mt-2 d-flex justify-content-center">
+      <div class="col">
+        <h4>Druckvolumen Farbe: </h4>
+      </div>
+      <div class="col form-group">
+        <input type="range" class="custom-range" oninput="showSlider()" min="0" max="100000" step="1000" id="sliderInputColor" value="0">
+        <span>Current Slider Value: <span id="sliderPrintColor"></span></span>
+      </div>
+    </div>
+  </div>
   <div class="row">
     <div class="col-md-5 text-center">
       <h2 class="text-center">Variante A</h2>
       <form>
-        <div class="form-row mt-2 d-flex justify-content-center">
-          <div class="col">
-            <h4>Druckvolumen S/W: </h4>
-          </div>
-          <div class="col form-group">
-            <input type="range" class="custom-range" oninput="showSlider()" min="0" max="100000" step="1000" id="sliderInputA" value="0">
-            <span>Current Slider Value: <span id="sliderPrintA"></span></span>
-          </div>
-        </div>
         <div class="form-row mt-2">
             <div class="col text-center">
                 <h4>Anschaffunskosten</h4>
             </div>
           <div class="col">
-            <input type="number" class="form-control" id="kaufenA" placeholder="Wert in Euro bitte">
+            <input type="number" class="form-control" id="priceA" placeholder="Wert in Euro bitte">
           </div>
         </div>
         <div class="form-row mt-2">
@@ -83,7 +96,7 @@
                 <h4>Druckkosten S/W-Seite:</h4>
             </div>
             <div class="col">
-              <input type="number" class="form-control" id="dFA" placeholder="Wert in Euro bitte">
+              <input type="number" class="form-control" id="pageGrayA" placeholder="Wert in Euro bitte">
             </div>
           </div>
           <div class="form-row mt-2">
@@ -91,7 +104,7 @@
                 <h4>Druckkosten Farbe-Seite:</h4>
             </div>
             <div class="col">
-              <input type="number" class="form-control" id="farbeA" placeholder="Wert in Euro bitte">
+              <input type="number" class="form-control" id="pageColorA" placeholder="Wert in Euro bitte">
             </div>
           </div>
           <div class="form-row mt-2">
@@ -99,7 +112,7 @@
                 <h4>Wartungskosten pro Jahr:</h4>
             </div>
             <div class="col">
-              <input type="number" class="form-control" id="wartpjA" placeholder="Wert in Euro bitte">
+              <input type="number" class="form-control" id="maintenanceA" placeholder="Wert in Euro bitte">
             </div>
           </div>
           <div class="form-row mt-2">
@@ -107,11 +120,8 @@
                 <h4>Energieverbrauch pro Jahr:</h4>
             </div>
             <div class="col">
-              <input type="number" class="form-control" id="energiejA" placeholder="Wert in Euro bitte">
+              <input type="number" class="form-control" id="consumptionA" placeholder="Wert in kWh bitte">
             </div>
-          </div>
-          <div class="form-row mt-2 d-flex justify-content-center">
-            <button type="submit" class="btn btn-primary">Rechnen</button>
           </div>
           <div class="form-row mt-2">
             <div class="col">
@@ -129,21 +139,12 @@
     <div class="col-md-5 text-center">
         <h2 class="text-center">Variante B</h2>
         <form>
-          <div class="form-row mt-2 d-flex justify-content-center">
-            <div class="col">
-              <h4>Druckvolumen S/W: </h4>
-            </div>
-            <div class="col form-group">
-              <input type="range" class="custom-range" oninput="showSlider()" min="0" max="100000" step="1000" id="sliderInputB" value="0">
-              <span>Current Slider Value: <span id="sliderPrintB"></span></span>
-            </div>
-            </div>
             <div class="form-row mt-2">
                 <div class="col text-center">
                     <h4>Anschaffunskosten</h4>
                 </div>
               <div class="col">
-                <input type="number" class="form-control" id="kaufenB" placeholder="Wert in Euro bitte">
+                <input type="number" class="form-control" id="priceB" placeholder="Wert in Euro bitte">
               </div>
             </div>
             <div class="form-row mt-2">
@@ -151,7 +152,7 @@
                     <h4>Druckkosten S/W-Seite:</h4>
                 </div>
                 <div class="col">
-                  <input type="number" class="form-control" id="dFB" placeholder="Wert in Euro bitte">
+                  <input type="number" class="form-control" id="pageGrayB" placeholder="Wert in Euro bitte">
                 </div>
               </div>
               <div class="form-row mt-2">
@@ -159,7 +160,7 @@
                     <h4>Druckkosten Farbe-Seite:</h4>
                 </div>
                 <div class="col">
-                  <input type="number" class="form-control" id="farbeB" placeholder="Wert in Euro bitte">
+                  <input type="number" class="form-control" id="pageColorB" placeholder="Wert in Euro bitte">
                 </div>
               </div>
               <div class="form-row mt-2">
@@ -167,7 +168,7 @@
                     <h4>Wartungskosten pro Jahr:</h4>
                 </div>
                 <div class="col">
-                  <input type="number" class="form-control" id="wartpjB" placeholder="Wert in Euro bitte">
+                  <input type="number" class="form-control" id="maintenanceB" placeholder="Wert in Euro bitte">
                 </div>
               </div>
               <div class="form-row mt-2">
@@ -175,11 +176,8 @@
                     <h4>Energieverbrauch pro Jahr:</h4>
                 </div>
                 <div class="col">
-                  <input type="number" class="form-control" id="energiejB" placeholder="Wert in Euro bitte">
+                  <input type="number" class="form-control" id="consumptionB" placeholder="Wert in kWh bitte">
                 </div>
-              </div>
-              <div class="form-row mt-2 d-flex justify-content-center">
-                <button type="submit" class="btn btn-primary">Rechnen</button>
               </div>
               <div class="form-row mt-2">
                   <div class="col">
@@ -194,6 +192,47 @@
   </div>
   <div class="container d-flex justify-content-center py-5">
     <h2>Gewinner: </h2>
+  </div>
+  <div class="form-row mt-2 d-flex justify-content-center">
+    <button type="submit" onclick="ausrechnen()" class="btn btn-primary" id="calculate">Rechnen</button>
+  </div>
+  <div class="conatiner m-5 p-3">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col"></th>
+          <th scope="col">Variante A</th>
+          <th scope="col">Variante B</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">Anschaffungspreis: </th>
+          <td>790 EUR</td>
+          <td>750 EUR</td>
+        </tr>
+        <tr>
+          <th scope="row">Druckkosten pro S/W-Seite: </th>
+          <td>5 Cent</td>
+          <td>6 Cent</td>
+        </tr>
+        <tr>
+          <th scope="row">Druckkosten pro Farbe-Seite: </th>
+          <td>20 Cent</td>
+          <td>22 Cent</td>
+        </tr>
+        <tr>
+          <th scope="row">Wartungskosten pro Jahr: </th>
+          <td>70 EUR</td>
+          <td>50 EUR</td>
+        </tr>
+        <tr>
+          <th scope="row">Energieverbrauch pro Jahr: </th>
+          <td>20 kWh</td>
+          <td>10 kWh</td>
+        </tr>
+      </div>
+    </table>
   </div>
 </div>
 
