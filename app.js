@@ -1,3 +1,11 @@
+//Input GLOBAL
+let farblos1 = document.getElementById("farblos1").value;
+let kaufenA = Number(document.getElementById("kaufenA").value);
+let kaufenb = Number(document.getElementById("kaufenB").value);
+
+
+
+
 function ausrechnen(){
     let farblos1 = document.getElementById("farblos1").value;
     let kaufenA = Number(document.getElementById("kaufenA").value);
@@ -11,4 +19,14 @@ function ausrechnen(){
     document.getElementById("gesamtA").value = gesamtA;
     document.getElementById("gesamtB").value = gesamtB;
 
+}
+
+function showSlider(){
+    document.getElementById("sliderPrintA").innerHTML = document.getElementById("sliderInputA").value; 
+    document.getElementById("sliderPrintB").innerHTML = document.getElementById("sliderInputB").value; 
+    //document.getElementById("farblos1").value = document.getElementById("farblosTest").value;
+} 
+
+function sliderReact(){
+    document.getElementById("farblosTest").value = document.getElementById("farblos1").value;
 }
