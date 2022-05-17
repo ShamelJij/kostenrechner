@@ -66,7 +66,7 @@
             <h4>Druckvolumen S/W: </h4>
           </div>
           <div class="col form-group">
-            <input type="range" class="custom-range" oninput="showSlider()" min="0" max="100000" step="1000" id="sliderInputGray" value="0">
+            <input type="range" class="custom-range" oninput="ausrechnen()" min="0" max="100000" step="1000" id="sliderInputGray" value="0">
             <span>Current Slider Value: <span id="sliderPrintGray"></span></span>
           </div>
         </div>
@@ -89,7 +89,7 @@
             <h4>Druckvolumen Farbe: </h4>
           </div>
           <div class="col form-group">
-            <input type="range" class="custom-range" oninput="showSlider()" min="0" max="100000" step="1000" id="sliderInputColor" value="0">
+            <input type="range" class="custom-range" oninput="ausrechnen()" min="0" max="100000" step="1000" id="sliderInputColor" value="0">
             <span>Current Slider Value: <span id="sliderPrintColor"></span></span>
           </div>
         </div>
@@ -209,7 +209,10 @@
     </div>
   </div>
   <div class="container d-flex justify-content-center py-5">
-    <h2>Gewinner: <span class="text-info" id="result"></span></h2>
+    <div class="row">
+      <div class="col"><h2>Gewinner: <span class="text-info" id="result">dasdas</span></h2></div>
+      <div class="col"><h2>Differenz: <span class="text-info" id="deference">dsfdfsdf</span></h2></div>
+    </div>
   </div>
   <div class="form-row mt-2 d-flex justify-content-center">
     <button type="submit" onclick="ausrechnen()" class="btn btn-primary" id="calculate">Rechnen</button>
