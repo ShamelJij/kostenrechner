@@ -106,7 +106,7 @@
                 <h4>Anschaffungskosten</h4>
             </div>
           <div class="col">
-            <input type="number" class="form-control" id="priceA" placeholder="Wert in Euro bitte">
+            <input type="number" class="form-control" id="priceA" onkeydown="ausrechnen()" placeholder="Wert in Euro bitte">
           </div>
         </div>
         <div class="form-row mt-2">
@@ -208,19 +208,22 @@
           </form>
     </div>
   </div>
-  <div class="container py-5">
+  <div class="container py-2">
     <div class="row">
       <div class="col text-center"><h2>Gewinner: <span class="text-info" id="result">dasdas</span></h2></div>
       <div class="col text-center"><h2>Differenz: <span class="text-info" id="difference">dsfdfsdf</span></h2></div>
     </div>
   </div>
-  <div class="form-row mt-2 d-flex justify-content-center">
+  <div class="form-row py-3 d-flex justify-content-center">
     <button type="submit" onclick="ausrechnen()" class="btn btn-primary" id="calculate">Rechnen</button>
   </div>
-  <div class="conatiner m-5 p-3">
+  <div class="form-row py-3  d-flex justify-content-center">
+    <button type="submit" onclick="showTable()" class="btn btn-primary" id="showTable">als Tabelle zeigen</button>
+  </div>
+  <div class="conatiner m-5 p-3 d-none" id="infoTable">
     <table class="table table-bordered">
       <thead>
-        <tr>
+        <tr class="table-warning">
           <th scope="col"></th>
           <th scope="col">Variante A</th>
           <th scope="col">Variante B</th>
@@ -229,30 +232,30 @@
       <tbody>
         <tr>
           <th scope="row">Anschaffungspreis: </th>
-          <td>790 EUR</td>
-          <td>750 EUR</td>
+          <td><span id="tpriceA"></span> EUR</td>
+          <td><span id="tpriceB"></span> EUR</td>
         </tr>
         <tr>
           <th scope="row">Druckkosten pro S/W-Seite: </th>
-          <td>5 Cent</td>
-          <td>6 Cent</td>
+          <td><span id="tpageGrayA"></span> Cent</td>
+          <td><span id="tpageGrayB"></span> Cent</td>
         </tr>
         <tr>
           <th scope="row">Druckkosten pro Farbe-Seite: </th>
-          <td>20 Cent</td>
-          <td>22 Cent</td>
+          <td><span id="tpageColorA"></span> Cent</td>
+          <td><span id="tpageColorB"></span> Cent</td>
         </tr>
         <tr>
           <th scope="row">Wartungskosten pro Jahr: </th>
-          <td>70 EUR</td>
-          <td>50 EUR</td>
+          <td><span id="tmaintenanceA"></span> EUR</td>
+          <td><span id="tmaintenanceB"></span> EUR</td>
         </tr>
         <tr>
           <th scope="row">Energieverbrauch pro Jahr: </th>
-          <td>20 kWh</td>
-          <td>10 kWh</td>
+          <td><span id="tconsumptionA"></span> kWh</td>
+          <td><span id="tconsumptionB"></span> kWh</td>
         </tr>
-      </div>
+      </tbody>
     </table>
   </div>
 </div>
