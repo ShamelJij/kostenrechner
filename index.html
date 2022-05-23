@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <title>Drucker Rechner</title>
   <meta charset="utf-8">
@@ -9,50 +10,56 @@
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 </head>
+
 <body>
 
-<div class="container-fluid">
-  <div class="py-5 text-center">
-    <div class="container">
-      <h1>Drucker Rechner</h1>
-      <p class="py-3">für die Abteilungswesen soll ein neuer Drucker angeschaft werden. Das Druckvolumen beträgt <span class="text-danger">10.000 S/W-Seiten</span> und <span class="text-danger">2.000 Farb-Seiten</span> pro Jahr. Zwei verschiedene DruckerTypen stehen zur Auswahl. Um eine Entscheidung treffen zu können, sollen die Gesamtkosten für die Nutzungsdauer von einem Jahr ermittelt werden. Die Energiekosten betragen <span class="text-danger">27 ct/kWh</span>. Der Anschaffungspreis wird in voller Höhe berücksichtigt.</p>
-      <p class="text-success">Ermitteln Sie nach die Berechnung der Gesamtkosten der beiden Varianten anschließend die Differenz zwischen den beiden Varianten.<br> Runden Sie das Ergebnis auf ganze EUR auf.</p>
-      <div class="conatiner p-3">
-        <table class="table table-bordered">
-          <thead>
-            <tr>
-              <th scope="col"></th>
-              <th scope="col">Variante A</th>
-              <th scope="col">Variante B</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">Anschaffungspreis: </th>
-              <td>790 EUR</td>
-              <td>750 EUR</td>
-            </tr>
-            <tr>
-              <th scope="row">Druckkosten pro S/W-Seite: </th>
-              <td>5 Cent</td>
-              <td>6 Cent</td>
-            </tr>
-            <tr>
-              <th scope="row">Druckkosten pro Farbe-Seite: </th>
-              <td>20 Cent</td>
-              <td>22 Cent</td>
-            </tr>
-            <tr>
-              <th scope="row">Wartungskosten pro Jahr: </th>
-              <td>70 EUR</td>
-              <td>50 EUR</td>
-            </tr>
-            <tr>
-              <th scope="row">Energieverbrauch pro Jahr: </th>
-              <td>20 kWh</td>
-              <td>10 kWh</td>
-            </tr>
-          </div>
+  <div class="container-fluid">
+    <div class="py-5 text-center">
+      <div class="container">
+        <h1>Drucker Rechner</h1>
+        <p class="py-3">für die Abteilungswesen soll ein neuer Drucker angeschaft werden. Das Druckvolumen beträgt <span
+            class="text-danger">10.000 S/W-Seiten</span> und <span class="text-danger">2.000 Farb-Seiten</span> pro
+          Jahr. Zwei verschiedene DruckerTypen stehen zur Auswahl. Um eine Entscheidung treffen zu können, sollen die
+          Gesamtkosten für die Nutzungsdauer von einem Jahr ermittelt werden. Die Energiekosten betragen <span
+            class="text-danger">27 ct/kWh</span>. Der Anschaffungspreis wird in voller Höhe berücksichtigt.</p>
+        <p class="text-success">Ermitteln Sie nach die Berechnung der Gesamtkosten der beiden Varianten anschließend die
+          Differenz zwischen den beiden Varianten.<br> Runden Sie das Ergebnis auf ganze EUR auf.</p>
+        <div class="conatiner p-3">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th scope="col"></th>
+                <th scope="col">Variante A</th>
+                <th scope="col">Variante B</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Anschaffungspreis: </th>
+                <td>790 EUR</td>
+                <td>750 EUR</td>
+              </tr>
+              <tr>
+                <th scope="row">Druckkosten pro S/W-Seite: </th>
+                <td>5 Cent</td>
+                <td>6 Cent</td>
+              </tr>
+              <tr>
+                <th scope="row">Druckkosten pro Farbe-Seite: </th>
+                <td>20 Cent</td>
+                <td>22 Cent</td>
+              </tr>
+              <tr>
+                <th scope="row">Wartungskosten pro Jahr: </th>
+                <td>70 EUR</td>
+                <td>50 EUR</td>
+              </tr>
+              <tr>
+                <th scope="row">Energieverbrauch pro Jahr: </th>
+                <td>20 kWh</td>
+                <td>10 kWh</td>
+              </tr>
+        </div>
         </table>
       </div>
     </div>
@@ -66,7 +73,8 @@
             <h4>Druckvolumen S/W: </h4>
           </div>
           <div class="col form-group">
-            <input type="range" class="custom-range" oninput="ausrechnen()" min="0" max="100000" step="1000" id="sliderInputGray" value="0">
+            <input type="range" class="custom-range" oninput="ausrechnen()" min="0" max="100000" step="1000"
+              id="sliderInputGray" value="0">
             <span>Current Slider Value: <span id="sliderPrintGray"></span></span>
           </div>
         </div>
@@ -75,12 +83,12 @@
     <div class="col">
       <div class="form-row mt-2">
         <div class="col-auto text-center">
-            <h4>Energiekosten pro kW/h: </h4>
+          <h4>Energiekosten pro kW/h: </h4>
         </div>
-      <div class="col">
-        <input type="number" class="form-control" id="energyCost" placeholder="Wert in Euro bitte" value="0.27">
+        <div class="col">
+          <input type="number" class="form-control" id="energyCost" placeholder="Wert in Euro bitte" value="0.27">
+        </div>
       </div>
-    </div>
     </div>
     <div class="col">
       <div class="container d-flex justify-content-center py-2">
@@ -89,7 +97,8 @@
             <h4>Druckvolumen Farbe: </h4>
           </div>
           <div class="col form-group">
-            <input type="range" class="custom-range" oninput="ausrechnen()" min="0" max="100000" step="1000" id="sliderInputColor" value="0">
+            <input type="range" class="custom-range" oninput="ausrechnen()" min="0" max="100000" step="1000"
+              id="sliderInputColor" value="0">
             <span>Current Slider Value: <span id="sliderPrintColor"></span></span>
           </div>
         </div>
@@ -102,116 +111,121 @@
       <h2 class="text-center">Variante A</h2>
       <form>
         <div class="form-row mt-2">
-            <div class="col text-center">
-                <h4>Anschaffungskosten</h4>
-            </div>
+          <div class="col text-center">
+            <h4>Anschaffungskosten</h4>
+          </div>
           <div class="col">
-            <input type="number" class="form-control" id="priceA" onkeydown="ausrechnen()" placeholder="Wert in Euro bitte">
+            <input type="number" class="form-control" id="priceA" onkeydown="ausrechnen()"
+              placeholder="Wert in Euro bitte">
           </div>
         </div>
         <div class="form-row mt-2">
-            <div class="col text-center">
-                <h4>Druckkosten S/W-Seite:</h4>
-            </div>
-            <div class="col">
-              <input type="number" class="form-control" id="pageGrayA" placeholder="Wert in Euro bitte">
-            </div>
+          <div class="col text-center">
+            <h4>Druckkosten S/W-Seite:</h4>
           </div>
-          <div class="form-row mt-2">
-            <div class="col text-center">
-                <h4>Druckkosten Farbe-Seite:</h4>
-            </div>
-            <div class="col">
-              <input type="number" class="form-control" id="pageColorA" placeholder="Wert in Euro bitte">
-            </div>
+          <div class="col">
+            <input type="number" class="form-control" id="pageGrayA" placeholder="Wert in Euro bitte">
           </div>
-          <div class="form-row mt-2">
-            <div class="col text-center">
-                <h4>Wartungskosten pro Jahr:</h4>
-            </div>
-            <div class="col">
-              <input type="number" class="form-control" id="maintenanceA" placeholder="Wert in Euro bitte">
-            </div>
+        </div>
+        <div class="form-row mt-2">
+          <div class="col text-center">
+            <h4>Druckkosten Farbe-Seite:</h4>
           </div>
-          <div class="form-row mt-2">
-            <div class="col text-center">
-                <h4>Energieverbrauch pro Jahr:</h4>
-            </div>
-            <div class="col">
-              <input type="number" class="form-control" id="consumptionA" placeholder="Wert in kWh bitte">
-            </div>
+          <div class="col">
+            <input type="number" class="form-control" id="pageColorA" placeholder="Wert in Euro bitte">
           </div>
-          <div class="form-row mt-2">
-            <div class="col">
-                <h4>Ergebniss:</h4>
-            </div>
-            <div class="col">
-                <input type="text" class="form-control" id="totalA" readonly>
-            </div>
+        </div>
+        <div class="form-row mt-2">
+          <div class="col text-center">
+            <h4>Wartungskosten pro Jahr:</h4>
+          </div>
+          <div class="col">
+            <input type="number" class="form-control" id="maintenanceA" placeholder="Wert in Euro bitte">
+          </div>
+        </div>
+        <div class="form-row mt-2">
+          <div class="col text-center">
+            <h4>Energieverbrauch pro Jahr:</h4>
+          </div>
+          <div class="col">
+            <input type="number" class="form-control" id="consumptionA" placeholder="Wert in kWh bitte">
+          </div>
+        </div>
+        <div class="form-row mt-2">
+          <div class="col">
+            <h4>Ergebniss:</h4>
+          </div>
+          <div class="col">
+            <input type="text" class="form-control" id="totalA" readonly>
+          </div>
         </div>
       </form>
     </div>
     <div class="col-md-2 text-center">
-      --||--
     </div>
     <div class="col-md-5 text-center">
-        <h2 class="text-center">Variante B</h2>
-        <form>
-            <div class="form-row mt-2">
-                <div class="col text-center">
-                    <h4>Anschaffungskosten</h4>
-                </div>
-              <div class="col">
-                <input type="number" class="form-control" id="priceB" placeholder="Wert in Euro bitte">
-              </div>
-            </div>
-            <div class="form-row mt-2">
-                <div class="col text-center">
-                    <h4>Druckkosten S/W-Seite:</h4>
-                </div>
-                <div class="col">
-                  <input type="number" class="form-control" id="pageGrayB" placeholder="Wert in Euro bitte">
-                </div>
-              </div>
-              <div class="form-row mt-2">
-                <div class="col text-center">
-                    <h4>Druckkosten Farbe-Seite:</h4>
-                </div>
-                <div class="col">
-                  <input type="number" class="form-control" id="pageColorB" placeholder="Wert in Euro bitte">
-                </div>
-              </div>
-              <div class="form-row mt-2">
-                <div class="col text-center">
-                    <h4>Wartungskosten pro Jahr:</h4>
-                </div>
-                <div class="col">
-                  <input type="number" class="form-control" id="maintenanceB" placeholder="Wert in Euro bitte">
-                </div>
-              </div>
-              <div class="form-row mt-2">
-                <div class="col text-center">
-                    <h4>Energieverbrauch pro Jahr:</h4>
-                </div>
-                <div class="col">
-                  <input type="number" class="form-control" id="consumptionB" placeholder="Wert in kWh bitte">
-                </div>
-              </div>
-              <div class="form-row mt-2">
-                  <div class="col">
-                      <h4>Ergebniss:</h4>
-                  </div>
-                  <div class="col">
-                      <input type="text" class="form-control" id="totalB" readonly>
-                  </div>
-              </div>
-          </form>
+      <h2 class="text-center">Variante B</h2>
+      <form>
+        <div class="form-row mt-2">
+          <div class="col text-center">
+            <h4>Anschaffungskosten</h4>
+          </div>
+          <div class="col">
+            <input type="number" class="form-control" id="priceB" placeholder="Wert in Euro bitte">
+          </div>
+        </div>
+        <div class="form-row mt-2">
+          <div class="col text-center">
+            <h4>Druckkosten S/W-Seite:</h4>
+          </div>
+          <div class="col">
+            <input type="number" class="form-control" id="pageGrayB" placeholder="Wert in Euro bitte">
+          </div>
+        </div>
+        <div class="form-row mt-2">
+          <div class="col text-center">
+            <h4>Druckkosten Farbe-Seite:</h4>
+          </div>
+          <div class="col">
+            <input type="number" class="form-control" id="pageColorB" placeholder="Wert in Euro bitte">
+          </div>
+        </div>
+        <div class="form-row mt-2">
+          <div class="col text-center">
+            <h4>Wartungskosten pro Jahr:</h4>
+          </div>
+          <div class="col">
+            <input type="number" class="form-control" id="maintenanceB" placeholder="Wert in Euro bitte">
+          </div>
+        </div>
+        <div class="form-row mt-2">
+          <div class="col text-center">
+            <h4>Energieverbrauch pro Jahr:</h4>
+          </div>
+          <div class="col">
+            <input type="number" class="form-control" id="consumptionB" placeholder="Wert in kWh bitte">
+          </div>
+        </div>
+        <div class="form-row mt-2">
+          <div class="col">
+            <h4>Ergebniss:</h4>
+          </div>
+          <div class="col">
+            <input type="text" class="form-control" id="totalB" readonly>
+          </div>
+        </div>
+      </form>
     </div>
   </div>
+  <hr class="mx-5">
   <div class="container py-2">
     <div class="row">
-      <div class="col text-center"><h2>Gewinner: <span class="text-info" id="result">dasdas</span></h2></div>
-      <div class="col text-center"><h2>Differenz: <span class="text-info" id="difference">dsfdfsdf</span></h2></div>
+      <div class="col text-center">
+        <h2>Gewinner: <span class="text-info" id="result"></span></h2>
+      </div>
+      <div class="col text-center">
+        <h2>Differenz: <span class="text-info" id="difference"></span></h2>
+      </div>
     </div>
   </div>
   <div class="form-row py-3 d-flex justify-content-center">
@@ -258,12 +272,19 @@
       </tbody>
     </table>
   </div>
-</div>
+  </div>
 
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
 
-<script src="app.js"></script>
+  <script src="app.js"></script>
 </body>
+
 </html>
